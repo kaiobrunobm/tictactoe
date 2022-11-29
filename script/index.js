@@ -43,6 +43,33 @@ document
 
     document.querySelector(".tic-tac-toe").style.marginTop = "0";
     document.querySelector(".player-inputs").style.display = "none";
+
+    const play_again_btn = document.querySelector(".play-again-btn");
+    play_again_btn.style.display = "block";
+    play_again_btn.addEventListener("click", function (event) {
+      document
+        .querySelectorAll(".tic-tac-toe-space")
+        .forEach(function (element) {
+          element.classList.remove("player-win");
+          document
+            .querySelectorAll(".tic-tac-toe-space > .tic-tac-toe-icon")
+            .forEach(function (element) {
+              element.parentNode.removeChild(element);
+            });
+        });
+      players_div.parentNode.removeChild(players_div);
+      first_player.value = "";
+      second_player.value = "";
+      document
+        .querySelectorAll(".tic-tac-toe-space")
+        .forEach(function (element) {
+          element.style.cursor = "pointer";
+        });
+      document.body.classList = "first-player-turn";
+      document.querySelector(".tic-tac-toe").style.marginTop = "10rem";
+      document.querySelector(".player-inputs").style.display = "block";
+      event.target.style.display = "none";
+    });
   });
 
 function start_game() {

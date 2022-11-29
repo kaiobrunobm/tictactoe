@@ -304,6 +304,23 @@ main .game {
   flex-direction: column-reverse;
   align-items: center;
 }
+main .game .play-again-btn {
+  width: 20rem;
+  height: 7rem;
+  margin-bottom: 5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 7rem;
+  transition: 0.3s all ease;
+  cursor: pointer;
+  display: none;
+}
+main .game .play-again-btn:hover {
+  background-color: var(--primary-color-hover);
+}
 main .game .tic-tac-toe {
   display: flex;
   align-items: center;
